@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Ciências da Computação</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Ciências da Computação</h1>
+
+        <!-- Formulário para o nome do usuário -->
+        <div id="inicio">
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+            <button onclick="iniciarQuiz()">Iniciar Quiz</button>
+        </div>
+
+        <!-- Área do quiz -->
+        <div id="quiz" style="display:none;">
+            <div id="pergunta-container">
+                <p id="pergunta"></p>
+                <div id="opcoes"></div>
+            </div>
+            <button id="proxima" onclick="proximaPergunta()" disabled>Próxima</button>
+        </div>
+
+        <!-- Resultado -->
+        <div id="resultado" style="display:none;">
+            <h2>Resultado de <span id="nome-usuario"></span></h2>
+            <p>Acertos: <span id="acertos"></span></p>
+            <p>Erros: <span id="erros"></span></p>
+            <p>Aproveitamento: <span id="percentual"></span>%</p>
+            <p id="mensagem"></p>
+            <canvas id="graficoDesempenho"></canvas>
+        </div>
+    </div>
+
+    <script src="questoes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

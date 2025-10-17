@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e1894;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #0b90c5;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #1f6dbb;
+    transform: scale(1.05);
+}
+
+/* Opções */
+.opcao-btn {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+/* Círculo antes do texto */
+.opcao-btn::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000102;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    background-color: transparent;
+}
+
+/* Círculo preenchido com animação */
+.opcao-btn.selecionada::before {
+    background-color: #267bca;
+    transform: scale(1.2);
+    animation: preencherCiclo 0.4s ease forwards;
+}
+
+/* Animação de preenchimento gradual */
+@keyframes preencherCiclo {
+    0% {
+        background-color: transparent;
+        transform: scale(0.8);
+    }
+    50% {
+        background-color: #000000aa;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: #000000;
+        transform: scale(1.2);
+    }
+}
+
+.opcao-btn:hover:not(:disabled) {
+    background-color: #8ebfe6;
+    transform: scale(1.02);
+}
+
+/* Animação de fade para perguntas */
+#pergunta-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#pergunta-container.show {
+    opacity: 1;
+}
+
+/* Resultado com fade-in */
+#resultado {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#resultado.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #2196f3;
+    color: #fff;
+}
